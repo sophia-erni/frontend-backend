@@ -21,29 +21,6 @@ namespace QuizApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("QuizApp.Models.Answers", b =>
-                {
-                    b.Property<int>("AnswerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AnswerId"));
-
-                    b.Property<string>("Answer")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
-
-                    b.HasKey("AnswerId");
-
-                    b.HasIndex("QuestionId")
-                        .IsUnique();
-
-                    b.ToTable("Answers");
-                });
-
             modelBuilder.Entity("QuizApp.Models.Questions", b =>
                 {
                     b.Property<int>("QuestionId")
@@ -52,6 +29,10 @@ namespace QuizApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuestionId"));
 
+                    b.Property<string>("Answer")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Question")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -59,23 +40,6 @@ namespace QuizApp.Migrations
                     b.HasKey("QuestionId");
 
                     b.ToTable("Questions");
-                });
-
-            modelBuilder.Entity("QuizApp.Models.Answers", b =>
-                {
-                    b.HasOne("QuizApp.Models.Questions", "Question")
-                        .WithOne("Answer")
-                        .HasForeignKey("QuizApp.Models.Answers", "QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Question");
-                });
-
-            modelBuilder.Entity("QuizApp.Models.Questions", b =>
-                {
-                    b.Navigation("Answer")
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

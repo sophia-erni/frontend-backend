@@ -32,11 +32,6 @@ namespace QuizApp.Repositories
             return entity;
         }
 
-        public Task<T> Delete(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<T> Get(int id, params Expression<Func<T, object>>[] includes)
         {
             IQueryable<T> query = _context.Set<T>();

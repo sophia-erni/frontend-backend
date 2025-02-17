@@ -1,84 +1,5 @@
 [
   {
-    "ContainingType": "QuizApp.Controllers.AnswersController",
-    "Method": "GetAnswers",
-    "RelativePath": "api/Answers",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "QuizApp.Controllers.AnswersController",
-    "Method": "CreateAnswer",
-    "RelativePath": "api/Answers",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "createAnswer",
-        "Type": "QuizApp.DTOs.CreateAnswer",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "QuizApp.Controllers.AnswersController",
-    "Method": "GetAnswer",
-    "RelativePath": "api/Answers/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "QuizApp.Controllers.AnswersController",
-    "Method": "UpdateAnswer",
-    "RelativePath": "api/Answers/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "updateAnswer",
-        "Type": "QuizApp.DTOs.UpdateAnswer",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "QuizApp.Controllers.AnswersController",
-    "Method": "DeleteAnswer",
-    "RelativePath": "api/Answers/{id}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "QuizApp.Controllers.QuestionsController",
     "Method": "GetQuestions",
     "RelativePath": "api/questions",
@@ -156,26 +77,5 @@
       }
     ],
     "ReturnTypes": []
-  },
-  {
-    "ContainingType": "QuizApp.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[QuizApp.WeatherForecast, QuizApp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ],
-    "EndpointName": "GetWeatherForecast"
   }
 ]

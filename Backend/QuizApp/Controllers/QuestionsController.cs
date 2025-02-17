@@ -32,12 +32,23 @@ namespace QuizApp.Controllers
         public async Task<IActionResult> GetQuestion(int id)
         {
             var question = await _questionsRepository.Get(id);
-            if (question == null)
-            {
-                return NotFound();
-            }
+        if (id == 18)
+        {
             var questionDto = _mapper.Map<GetQuestionDto>(question);
+            Console.WriteLine($"THIS IS THE ONE>>>{questionDto}");
+
             return Ok(questionDto);
+        }
+        else
+        {
+            return NotFound();
+        }
+            // if (question == null)
+            // {
+            //     return NotFound();
+            // }
+            // var questionDto = _mapper.Map<GetQuestionDto>(question);
+            // return Ok(questionDto);
         }
 
         [HttpPost("questions")]

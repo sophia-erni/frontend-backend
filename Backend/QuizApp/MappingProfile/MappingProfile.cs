@@ -15,11 +15,6 @@ namespace QuizApp.MappingProfile
             CreateMap<DeleteQuestion,Questions>();
             CreateMap<GetQuestion,Questions>();
 
-            CreateMap<Answers, GetAnswerDto>();
-            CreateMap<CreateAnswer, Answers>();
-            CreateMap<UpdateAnswer,Answers>();
-            CreateMap<DeleteAnswer,Answers>();
-            CreateMap<GetAnswer,Answers>();
         }
     }
 }

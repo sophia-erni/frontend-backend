@@ -1,7 +1,7 @@
 import { BrowserRouter as Routers, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
-import Quiz from "./components/Quiz";
-import QuizMaker from "./components/QuizMaker";
+import QuizPage from "./components/QuizPage";
+import QuestionsPage from "./components/QuestionsPage";
 import "./App.css";
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
     <Routers>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/quiz" element={<Quiz />} />
-        <Route path="/quiz-maker" element={<QuizMaker />} />
+        <Route path="/quiz" element={<QuizPage />} />
+        <Route path="/quiz-maker" element={<QuestionsPage />} />
       </Routes>
     </Routers>
   );

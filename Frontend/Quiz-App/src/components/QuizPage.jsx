@@ -1,6 +1,6 @@
 import { buttonClass } from "../styles";
 import { useNavigate } from "react-router-dom";
-const Quiz = () => {
+const QuizPage = () => {
   const navigate = useNavigate();
   const handleHome = () => {
     navigate("/");
@@ -16,4 +16,4 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+export default QuizPage;
