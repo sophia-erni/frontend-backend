@@ -50,7 +50,26 @@ const initialState = {
 const questionSlice = createSlice({
   name: "questions",
   initialState,
-  reducers: {},
+  reducers: {
+    addQuestion: (state, action) => {
+      state.questions.push(action.payload);
+    },
+    changeQuestion: (state, action) => {
+      const { id, newQuestion } = action.payload;
+      const index = state.questions.findIndex(
+        (question) => question.id === id
+      );
+      if (index !== -1) {
+        state.questions[index] = newQuestion;
+      }
+    },
+    removeQuestion: (state, action) => {
+      state.questions = state.questions.filter(
+        (question) => question.id !== action.payload
+      );
+    },
+
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchQuestions.pending, (state) => {
@@ -88,4 +107,5 @@ const questionSlice = createSlice({
   },
 });
 
+export const { addQuestion, changeQuestion, removeQuestion } = questionSlice.actions;
 export default questionSlice.reducer;

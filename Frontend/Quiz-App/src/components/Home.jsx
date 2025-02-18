@@ -1,5 +1,5 @@
 import React from "react";
-import { buttonClass } from "../styles";
+import { buttonClass,divClassWrapper } from "../styles";
 import { useNavigate } from "react-router-dom";
 const Home = () => {
   const navigate = useNavigate();
@@ -10,13 +10,12 @@ const Home = () => {
     navigate("/quiz-maker");
   };
   return (
-    <div>
-      <h1>Home</h1>
-      <p>Welcome to the Quiz App!</p>
-      <button className={buttonClass} onClick={handleStart}>
+    <div className={divClassWrapper}>
+      <h1 className="font-dyna-puff text-4x1 text-center text-yellow-300">Welcome to Quiz App!</h1>
+      <button className={`${buttonClass} mt-5 w-32`} onClick={handleStart}>
         Start
       </button>
-      <button className={buttonClass} onClick={handleMake}>
+      <button className={`${buttonClass} mt-5 w-32`}  onClick={handleMake}>
         Create Quiz
       </button>
     </div>

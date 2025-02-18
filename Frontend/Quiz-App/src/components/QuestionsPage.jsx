@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import {
@@ -8,7 +8,7 @@ import {
   deleteExistingQuestion,
 } from "../redux/questionSlice";
 
-import { buttonClass, formClass, inputForFormClass } from "../styles";
+import { buttonClass, divClassWrapper, formClass, inputForFormClass,inputForFormClass_questionPage,labelForFormClass,pQuestionForFormClass_questionPage,titleClass, titleClass_questionPage } from "../styles";
 import { useNavigate } from "react-router-dom";
 
 const QuestionsPage = () => {
@@ -21,11 +21,6 @@ const QuestionsPage = () => {
   useEffect(() => {
     dispatch(fetchQuestions());
   }, [dispatch]);
-
-
-  useEffect(() => {
-    console.log("This is questions:", questions);
-  }, [questions]);
 
   const handleHome = () => {
     navigate("/");
@@ -41,8 +36,7 @@ const QuestionsPage = () => {
         })
       ).then(() => {
         dispatch(fetchQuestions());
-      }
-      );
+      });
       setEditId(null);
     } else {
       dispatch(
@@ -63,25 +57,23 @@ const QuestionsPage = () => {
     } else {
       console.error("Question not found:", id);
     }
-   
   };
 
   const handleDelete = (id) => {
     const question = questions[id];
-    console.log('this is question from Handledelete:', question);
+    console.log("this is question from Handledelete:", question);
     console.log("This is handleDelete:", question.questionId);
-    dispatch(deleteExistingQuestion(question.questionId)).then(() => { 
+    dispatch(deleteExistingQuestion(question.questionId)).then(() => {
       dispatch(fetchQuestions());
     });
   };
 
   return (
-    <div>
-      <h1>Quiz Maker</h1>
-      <p>Quiz Maker Page</p>
-      <form className={formClass} onSubmit={handleSubmit(onSubmit)}>
+    <div className={divClassWrapper}>
+      <h1 className={titleClass_questionPage}>Create Quiz</h1>
+      <form className="max-w-sm mx-auto space-y-5" onSubmit={handleSubmit(onSubmit)}>
         <input
-          className={inputForFormClass}
+          className={inputForFormClass_questionPage}
           type="text"
           name="question"
           placeholder="Enter question"
@@ -89,7 +81,7 @@ const QuestionsPage = () => {
         />
         {/* {errors.question.message && <p>Question is required</p>} */}
         <input
-          className={inputForFormClass}
+          className={inputForFormClass_questionPage}
           type="text"
           name="answer"
           placeholder="Enter answer"
@@ -103,18 +95,12 @@ const QuestionsPage = () => {
       <ul>
         {questions.map((q, index) => (
           <li key={index}>
-            <p>{q.question}</p>
+            <p className={pQuestionForFormClass_questionPage}>{q.question}</p>
             <p>{q.answer}</p>
-            <button
-              className={buttonClass}
-              onClick={() => handleEdit(index)}
-            >
+            <button className={buttonClass} onClick={() => handleEdit(index)}>
               Edit
             </button>
-            <button
-              className={buttonClass}
-              onClick={() => handleDelete(index)}
-            >
+            <button className={buttonClass} onClick={() => handleDelete(index)}>
               Delete
             </button>
           </li>
@@ -123,7 +109,8 @@ const QuestionsPage = () => {
       <button className={buttonClass} onClick={handleHome}>
         Home
       </button>
-    </div>
+      </div>
+    // </div>
   );
 };
 
