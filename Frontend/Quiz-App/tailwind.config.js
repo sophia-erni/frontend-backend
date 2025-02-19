@@ -7,8 +7,13 @@ export default {
         'space-mono': ['"Space Mono"', 'monospace'],
         'dyna-puff': ['"DynaPuff"', 'cursive'],
         'funnel-display': ['"Funnel Display"', 'cursive'],
-        // sans: ["Inter", "sans-serif"],
-      }
+      },
+      colors: {
+        'custom-bg': '#4F3F84',
+        'custom-text': '#FFA22A',
+        'custom-accent': '#FF662A',
+        'custom-hover': '#82AC26',
+      },
     },
   },
   plugins: [],

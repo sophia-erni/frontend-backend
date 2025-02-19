@@ -67,46 +67,46 @@ const QuestionsPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold text-center mb-4">Create Quiz</h1>
+    <div className="container mx-auto p-4 bg-[#4F3F84] min-h-screen">
+      <h1 className="font-funnel-display text-4xl font-bold text-center mb-4 text-[#FFA22A]">Create Quiz</h1>
       <form className="max-w-sm mx-auto space-y-5" onSubmit={handleSubmit(onSubmit)}>
         <input
-          className="w-full p-2 border border-gray-300 rounded"
+          className="font-funnel-display w-full p-2 border border-[#FF662A] rounded text-[#FF662A]"
           type="text"
           name="question"
           placeholder="Enter question"
           {...register("question", { required: true })}
         />
         <input
-          className="w-full p-2 border border-gray-300 rounded"
+          className="font-funnel-display w-full p-2 border border-[#FF662A] rounded text-[#FF662A]"
           type="text"
           name="answer"
           placeholder="Enter answer"
           {...register("answer", { required: true })}
         />
-        <button className="w-full p-2 bg-blue-500 text-white rounded" type="submit">
+        <button className="w-full p-2 bg-[#FF662A] text-white rounded hover:bg-[#82AC26]" type="submit">
           {editId !== null ? "Update" : "Add"}
         </button>
       </form>
       <ul className="mt-4 space-y-4">
         {questions.map((q, index) => (
-          <li key={index} className="p-4 border border-gray-300 rounded flex justify-between items-center">
+          <li key={index} className="font-funnel-display p-4 border border-[#FF662A] rounded flex justify-between items-center bg-[#FFA22A]">
             <div>
-              <p className="font-semibold">{q.question}</p>
-              <p>{q.answer}</p>
+              <p className="font-semibold text-[#4F3F84] text-lg ">{q.question}</p>
+              <p className="text-[#4F3F84]">{q.answer}</p>
             </div>
             <div className="flex space-x-2">
               <button onClick={() => handleEdit(index)}>
-                <EditIcon className="w-6 h-6 text-gray-800 dark:text-white" />
+                <EditIcon className="w-6 h-6 text-[#4F3F84]" />
               </button>
               <button onClick={() => handleDelete(index)}>
-                <TrashIcon className="w-6 h-6 text-gray-800 dark:text-white" />
+                <TrashIcon className="w-6 h-6 text-[#4F3F84]" />
               </button>
             </div>
           </li>
         ))}
       </ul>
-      <button className="w-full p-2 mt-4 bg-gray-500 text-white rounded" onClick={handleHome}>
+      <button className="w-full p-2 mt-4 bg-[#FF662A] text-white rounded hover:bg-[#82AC26]" onClick={handleHome}>
         Home
       </button>
     </div>
