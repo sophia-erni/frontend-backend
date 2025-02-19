@@ -18,7 +18,7 @@ const QuizPage = () => {
 
   useEffect(() => {
     dispatch(fetchQuestions());
-  }, [dispatch]);
+  },[]);
 
   useEffect(() => {
     console.log("This is questions:", questions);
@@ -38,11 +38,9 @@ const QuizPage = () => {
     }
     // console.log("This is answers from shuffleAnswers before shuffle/slice:", answers);
 
-    answers = answers.slice(0, 3);
-    answers.push(questions[currentQuestion].answer);
+    // answers = answers.slice(0, 3);
+    // answers.push(questions[currentQuestion].answer);
     
-    
-
     for (let i = answers.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [answers[i], answers[j]] = [answers[j], answers[i]];

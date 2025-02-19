@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { EditIcon, TrashIcon } from "../assets/icons";
+import { EditIcon, HomeIcon, TrashIcon } from "../assets/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import {
@@ -9,6 +9,7 @@ import {
   deleteExistingQuestion,
 } from "../redux/questionSlice";
 import { useNavigate } from "react-router-dom";
+// import Home from "./Home";
 
 const QuestionsPage = () => {
   const navigate = useNavigate();
@@ -67,8 +68,14 @@ const QuestionsPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 bg-[#4F3F84] min-h-screen">
-      <h1 className="font-funnel-display text-4xl font-bold text-center mb-4 text-[#FFA22A]">Create Quiz</h1>
+    <div className="container mx-auto bg-[#4F3F84] min-h-screen">
+     <div className="flex flex-row-reverse justify-between items-start pb-2">
+      <button onClick={handleHome} className="bg-[#FF662A] p-2 rounded">
+          <HomeIcon className="w-6 h-6 text-white" />
+        </button>
+      <h1 className="font-funnel-display text-4xl font-bold text-center text-[#FFA22A]">Create Quiz</h1>
+     </div>
+    
       <form className="max-w-sm mx-auto space-y-5" onSubmit={handleSubmit(onSubmit)}>
         <input
           className="font-funnel-display w-full p-2 border border-[#FF662A] rounded text-[#FF662A]"
@@ -97,18 +104,16 @@ const QuestionsPage = () => {
             </div>
             <div className="flex space-x-2">
               <button onClick={() => handleEdit(index)}>
-                <EditIcon className="w-6 h-6 text-[#4F3F84]" />
+                <EditIcon className="w-4 h-4 text-[#4F3F84]" />
               </button>
               <button onClick={() => handleDelete(index)}>
-                <TrashIcon className="w-6 h-6 text-[#4F3F84]" />
+                <TrashIcon className="w-4 h-4 text-[#4F3F84]" />
               </button>
             </div>
           </li>
         ))}
       </ul>
-      <button className="w-full p-2 mt-4 bg-[#FF662A] text-white rounded hover:bg-[#82AC26]" onClick={handleHome}>
-        Home
-      </button>
+     
     </div>
   );
 };
