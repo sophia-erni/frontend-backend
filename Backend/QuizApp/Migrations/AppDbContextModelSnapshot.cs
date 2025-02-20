@@ -23,11 +23,8 @@ namespace QuizApp.Migrations
 
             modelBuilder.Entity("QuizApp.Models.Questions", b =>
                 {
-                    b.Property<int>("QuestionId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("UsersId")
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("QuestionId"));
 
                     b.Property<string>("Answer")
                         .IsRequired()
@@ -37,9 +34,49 @@ namespace QuizApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("QuestionId");
+                    b.Property<int>("QuestionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UsersId");
 
                     b.ToTable("Questions");
+                });
+
+            modelBuilder.Entity("QuizApp.Models.Users", b =>
+                {
+                    b.Property<int>("UsersId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsersId"));
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UsersId");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("QuizApp.Models.Questions", b =>
+                {
+                    b.HasOne("QuizApp.Models.Users", "Users")
+                        .WithMany("Question")
+                        .HasForeignKey("UsersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Users");
+                });
+
+            modelBuilder.Entity("QuizApp.Models.Users", b =>
+                {
+                    b.Navigation("Question");
                 });
 #pragma warning restore 612, 618
         }
