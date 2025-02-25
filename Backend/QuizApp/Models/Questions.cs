@@ -6,14 +6,14 @@ namespace QuizApp.Models
     //primary key
     public class Questions
     {
-    
-        public int QuestionId { get; set; }
+
+        public long Id { get; set; }
         public string Question {  get; set; }
         public string Answer    { get; set; }
 
         
-        public int UsersId { get; set; }
-        public Users Users { get; set; }
+        //public long UsersId { get; set; }
+        //public Users Users { get; set; }
 
     }
 }

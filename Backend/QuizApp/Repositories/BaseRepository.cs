@@ -21,7 +21,7 @@ namespace QuizApp.Repositories
             return entity;
         }
 
-        public async Task<T> Delete(int id)
+        public async Task<T> Delete(long id)
         {
             var entity = await _context.Set<T>().FindAsync(id);
             if (entity != null)
@@ -32,7 +32,7 @@ namespace QuizApp.Repositories
             return entity;
         }
 
-        public async Task<T> Get(int id, params Expression<Func<T, object>>[] includes)
+        public async Task<T> Get(long id, params Expression<Func<T, object>>[] includes)
         {
             IQueryable<T> query = _context.Set<T>();
             query = includes.Aggregate(query, (current, include) => current.Include(include));
@@ -51,7 +51,7 @@ namespace QuizApp.Repositories
         public async Task<T> Update(T entity)
         {
             _context.Set<T>().Update(entity);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return entity;
         }
     }

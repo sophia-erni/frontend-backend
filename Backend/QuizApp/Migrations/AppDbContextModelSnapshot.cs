@@ -23,8 +23,11 @@ namespace QuizApp.Migrations
 
             modelBuilder.Entity("QuizApp.Models.Questions", b =>
                 {
-                    b.Property<int>("UsersId")
-                        .HasColumnType("int");
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Answer")
                         .IsRequired()
@@ -34,21 +37,23 @@ namespace QuizApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
+                    b.Property<long?>("UsersId")
+                        .HasColumnType("bigint");
 
-                    b.HasKey("UsersId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("UsersId");
 
                     b.ToTable("Questions");
                 });
 
             modelBuilder.Entity("QuizApp.Models.Users", b =>
                 {
-                    b.Property<int>("UsersId")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsersId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -58,20 +63,16 @@ namespace QuizApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UsersId");
+                    b.HasKey("Id");
 
                     b.ToTable("Users");
                 });
 
             modelBuilder.Entity("QuizApp.Models.Questions", b =>
                 {
-                    b.HasOne("QuizApp.Models.Users", "Users")
+                    b.HasOne("QuizApp.Models.Users", null)
                         .WithMany("Question")
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Users");
+                        .HasForeignKey("UsersId");
                 });
 
             modelBuilder.Entity("QuizApp.Models.Users", b =>

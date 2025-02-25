@@ -29,34 +29,30 @@ namespace QuizApp.Controllers
         }
 
         [HttpGet("questions/{id}")]
-        public async Task<IActionResult> GetQuestion(int id)
+        public async Task<IActionResult> GetQuestion(long id)
         {
             var question = await _questionsRepository.Get(id);
-            if (id == 18)
-            {
-                var questionDto = _mapper.Map<GetQuestionDto>(question);
-                Console.WriteLine($"THIS IS THE ONE>>>{questionDto}");
-
-                return Ok(questionDto);
-            }
-            else
+            if (question == null)
             {
                 return NotFound();
             }
+            var questionDto = _mapper.Map<GetQuestionDto>(question);
+            return Ok(questionDto);
+
 
         }
 
         [HttpPost("questions")]
-        public async Task<IActionResult> CreateQuestion(CreateQuestion createQuestion)
+        public async Task<IActionResult> CreateQuestion([FromBody] CreateQuestion createQuestion)
         {
             var question = _mapper.Map<Questions>(createQuestion);
             var createdQuestion = await _questionsRepository.Add(question);
             var questionDto = _mapper.Map<GetQuestionDto>(createdQuestion);
-            return CreatedAtAction(nameof(GetQuestion), new { id = questionDto.QuestionId }, questionDto);
+            return CreatedAtAction(nameof(GetQuestion), new { id = questionDto.Id }, questionDto);
         }
 
         [HttpPut("questions/{id}")]
-        public async Task<IActionResult> UpdateQuestion(int id, UpdateQuestion updateQuestion)
+        public async Task<IActionResult> UpdateQuestion(long id, [FromBody] UpdateQuestion updateQuestion)
         {
             var question = await _questionsRepository.Get(id);
             if (question == null)
@@ -70,15 +66,15 @@ namespace QuizApp.Controllers
         }
 
         [HttpDelete("questions/{id}")]
-        public async Task<IActionResult> DeleteQuestion(int id)
+        public async Task<IActionResult> DeleteQuestion(long id)
         {
             var question = await _questionsRepository.Get(id);
             if (question == null)
             {
                 return NotFound();
             }
-            await _questionsRepository.Delete(id);
-            return NoContent();
+            var questionDto = await _questionsRepository.Delete(id);
+            return Ok(questionDto);
         }
     }
 }

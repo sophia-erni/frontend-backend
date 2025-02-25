@@ -16,16 +16,16 @@ namespace QuizApp.DTOs
 
     public class DeleteUser
     {
-        public int UserId { get; set; }
+        public long Id { get; set; }
 
     }
 
     public class GetUser
-    { public int UserId { get; set;} }
+    { public long Id { get; set;} }
 
     public class GetUserDto
     {
-        public int UserId { get; set; }
+        public long Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public ICollection<Questions> Questions { get; set; }
