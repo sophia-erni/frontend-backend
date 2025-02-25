@@ -4,7 +4,7 @@ import {
   createQuestion,
   updateQuestion,
   deleteQuestion,
-} from "../services/api";
+} from "../services/questionApi";
 
 export const fetchQuestions = createAsyncThunk(
   "questions/fetchQuestions",

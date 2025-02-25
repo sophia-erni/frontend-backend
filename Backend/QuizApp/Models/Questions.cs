@@ -12,8 +12,8 @@ namespace QuizApp.Models
         public string Answer    { get; set; }
 
         
-        //public long UsersId { get; set; }
-        //public Users Users { get; set; }
+        public long UsersId { get; set; }
+        public Users Users { get; set; }
 
     }
 }
