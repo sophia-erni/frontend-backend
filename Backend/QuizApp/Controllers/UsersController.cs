@@ -21,7 +21,7 @@ namespace QuizApp.Controllers
             _mapper = mapper;
         }
 
-        [Authorize]
+        //[Authorize(Policy = "User")]
         [HttpGet("users")]
         public async Task<IActionResult> GetUsers()
         {
@@ -31,6 +31,8 @@ namespace QuizApp.Controllers
         }
 
         [HttpGet("users/{id}")]
+        //[Authorize(Policy = "User")]
+        [Authorize]
         public async Task<IActionResult> GetUser(long id)
         {
             var user = await _usersRepository.Get(id);

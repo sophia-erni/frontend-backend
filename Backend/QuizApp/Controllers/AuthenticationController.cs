@@ -15,13 +15,11 @@ namespace QuizApp.Controllers
     {
         private readonly IBaseRepository<Users> _usersRepository;
         private readonly TokenService _tokenService;
-        private readonly IMapper _mapper;
 
         public AuthenticationController(IBaseRepository<Users> usersRepository, TokenService tokenService, IMapper mapper)
         {
             _usersRepository = usersRepository;
             _tokenService = tokenService;
-            _mapper = mapper;
 
         }
 
@@ -35,7 +33,7 @@ namespace QuizApp.Controllers
                 Console.WriteLine("Unauthorize");
                 return Unauthorized();
             }
-            var token = _tokenService.GenerateToken(user.Username);
+            var token = _tokenService.GenerateToken(user.Username,"User");
             return Ok(new {Token = token});
 
         }

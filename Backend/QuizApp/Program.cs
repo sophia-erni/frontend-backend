@@ -1,9 +1,11 @@
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using QuizApp.Data;
 using QuizApp.MappingProfile;
 using QuizApp.Repositories;
@@ -19,7 +21,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
-
+//builder.Services.AddRouting();
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -37,11 +39,15 @@ using (var rng = RandomNumberGenerator.Create())
 string secretKey = Convert.ToBase64String(key);
 
 //store the key in an environment variable
-Environment.SetEnvironmentVariable("JWT_SECRET_KEY",secretKey);
+Environment.SetEnvironmentVariable("JWT_SECRET_KEY", secretKey);
 
-var keyFromEnv = Convert.FromBase64String(Environment.GetEnvironmentVariable("JWT_SECRET_KEY"));
+var keyFromEnv = Environment.GetEnvironmentVariable("JWT_SECRET_KEY");
+if (string.IsNullOrEmpty(keyFromEnv))
+{
+    throw new InvalidOperationException("JWT_SECRET_KEY environment variable is not set.");
+}
+var keyBytes = Convert.FromBase64String(keyFromEnv);
 //Configure JWT Authentication
-//var key = Encoding.ASCII.GetBytes("SecretKey");
 builder.Services.AddAuthentication(option =>
 {
     option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -55,13 +61,37 @@ builder.Services.AddAuthentication(option =>
             ValidateAudience = false,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(keyFromEnv)
+            IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
+            RequireSignedTokens = false // Add this line to not require a 'kid' in the token
+        };
+
+        option.Events = new JwtBearerEvents
+        {
+            OnAuthenticationFailed = context =>
+            {
+                Console.WriteLine("Authentication failed" + context.Exception.Message);
+                return Task.CompletedTask;
+            },
+            OnTokenValidated = context =>
+            {
+                Console.WriteLine("Token validated: " + context.SecurityToken);
+                return Task.CompletedTask;
+            }
         };
     });
+    
+  
 
-builder.Services.AddSingleton(new TokenService(secretKey)); 
+builder.Services.AddSingleton(new TokenService(secretKey));
+builder.Services.AddAuthorization(option =>
+{
+    option.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+    option.AddPolicy("User", policy => policy.RequireRole("User"));
+});
+
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
+
 
 //setup cors in webapi
 builder.Services.AddCors(options =>
@@ -76,26 +106,45 @@ builder.Services.AddCors(options =>
 
 var app = builder.Build();
 
-//Congfigure the HTTP request pipeline
-app.UseHttpsRedirection();
-app.UseAuthorization();
-app.MapControllers();
-app.UseCors("AllowAll");
-
-
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
- 
     app.MapOpenApi();
     app.UseSwaggerUI();
     app.UseSwagger();
 }
 
+//Congfigure the HTTP request pipeline
+app.UseCors("AllowAll");
+app.UseRouting();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllers();
+//});
+
+
+
 
 app.Run();
+
+string GenerateJwtToken(string secretKey)
+{
+    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+    var token = new JwtSecurityToken(
+        issuer: "yourIssuer",
+        audience: "yourAudience",
+        expires: DateTime.Now.AddMinutes(30),
+        signingCredentials: creds);
+
+    var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+    // Log the generated token
+    Console.WriteLine("Generated JWT Token: " + tokenString);
+
+    return tokenString;
+}

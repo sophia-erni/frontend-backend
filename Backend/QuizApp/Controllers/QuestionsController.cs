@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QuizApp.DTOs;
@@ -42,6 +43,7 @@ namespace QuizApp.Controllers
 
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpPost("questions")]
         public async Task<IActionResult> CreateQuestion([FromBody] CreateQuestion createQuestion)
         {

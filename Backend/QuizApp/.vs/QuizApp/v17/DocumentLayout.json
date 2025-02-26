@@ -3,26 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\dtos\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:dtos\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,24 +11,12 @@
       "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\dtos\\usersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:dtos\\usersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\models\\questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:models\\questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -59,8 +27,44 @@
       "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:mappingprofile\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\models\\questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:models\\questions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:models\\userprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\dtos\\usersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:dtos\\usersdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:repositories\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\dtos\\questionsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:dtos\\questionsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\dtos\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|solutionrelative:dtos\\userprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09F9F121-4F5D-4D2C-98C0-12AD0946CE5A}|QuizApp.csproj|c:\\users\\extjaso\\onedrive - erni group\\desktop\\bootcamp\\exercises\\frontend-backend\\backend\\quizapp\\repositories\\ibaserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -74,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 205,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -94,7 +98,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-26T06:59:11.037Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "UserProfileDto.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\DTOs\\UserProfileDto.cs",
               "RelativeDocumentMoniker": "DTOs\\UserProfileDto.cs",
@@ -107,20 +124,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "DTOs\\LoginDto.cs",
               "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\DTOs\\LoginDto.cs",
               "RelativeToolTip": "DTOs\\LoginDto.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T01:35:09.167Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "UsersDto.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\DTOs\\UsersDto.cs",
               "RelativeDocumentMoniker": "DTOs\\UsersDto.cs",
@@ -139,53 +156,53 @@
               "RelativeDocumentMoniker": "Controllers\\AuthenticationController.cs",
               "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Controllers\\AuthenticationController.cs",
               "RelativeToolTip": "Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAnwB8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-26T01:26:08.713Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 4,
               "Title": "TokenService.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Services\\TokenService.cs",
               "RelativeDocumentMoniker": "Services\\TokenService.cs",
               "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Services\\TokenService.cs",
               "RelativeToolTip": "Services\\TokenService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAiwBcAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T09:47:31.172Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAGcAAAAAAAAAAADwv38AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T06:13:54.026Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 8,
               "Title": "UserProfile.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Models\\UserProfile.cs",
               "RelativeDocumentMoniker": "Models\\UserProfile.cs",
               "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Models\\UserProfile.cs",
               "RelativeToolTip": "Models\\UserProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T07:19:33.905Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 5,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\MappingProfile\\MappingProfile.cs",
               "RelativeDocumentMoniker": "MappingProfile\\MappingProfile.cs",
@@ -193,7 +210,8 @@
               "RelativeToolTip": "MappingProfile\\MappingProfile.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T05:37:31.347Z"
+              "WhenOpened": "2025-02-25T05:37:31.347Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -205,24 +223,25 @@
               "RelativeToolTip": "DTOs\\QuestionsDto.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAwwB4AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T05:32:31.739Z"
+              "WhenOpened": "2025-02-25T05:32:31.739Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "QuestionsController.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Controllers\\QuestionsController.cs",
               "RelativeDocumentMoniker": "Controllers\\QuestionsController.cs",
               "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Controllers\\QuestionsController.cs",
               "RelativeToolTip": "Controllers\\QuestionsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T05:32:05.081Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 7,
               "Title": "Questions.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Models\\Questions.cs",
               "RelativeDocumentMoniker": "Models\\Questions.cs",
@@ -235,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "IBaseRepository.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Repositories\\IBaseRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\IBaseRepository.cs",
@@ -247,46 +266,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "BaseRepository.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Repositories\\BaseRepository.cs",
               "RelativeDocumentMoniker": "Repositories\\BaseRepository.cs",
               "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Repositories\\BaseRepository.cs",
               "RelativeToolTip": "Repositories\\BaseRepository.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAwDAAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAASwDAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T02:10:34.057Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
               "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T02:10:09.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwCIAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-20T06:54:38.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\extjaso\\OneDrive - ERNI Group\\Desktop\\Bootcamp\\Exercises\\frontend-backend\\Backend\\QuizApp\\Models\\Users.cs",
               "RelativeDocumentMoniker": "Models\\Users.cs",
