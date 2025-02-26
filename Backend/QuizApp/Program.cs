@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using QuizApp.Data;
 using QuizApp.MappingProfile;
 using QuizApp.Repositories;
+using QuizApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,10 +55,11 @@ builder.Services.AddAuthentication(option =>
             ValidateAudience = false,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(keyFronEnv)
+            IssuerSigningKey = new SymmetricSecurityKey(keyFromEnv)
         };
     });
 
+builder.Services.AddSingleton(new TokenService(secretKey)); 
 builder.Services.AddOpenApi();
 builder.Services.AddSwaggerGen();
 

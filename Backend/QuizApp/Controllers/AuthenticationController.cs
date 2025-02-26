@@ -1,0 +1,43 @@
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using QuizApp.DTOs;
+using QuizApp.Models;
+using QuizApp.Repositories;
+using QuizApp.Services;
+
+namespace QuizApp.Controllers
+{
+    [Route("api/")]
+    [ApiController]
+    public class AuthenticationController : ControllerBase
+    {
+        private readonly IBaseRepository<Users> _usersRepository;
+        private readonly TokenService _tokenService;
+        private readonly IMapper _mapper;
+
+        public AuthenticationController(IBaseRepository<Users> usersRepository, TokenService tokenService, IMapper mapper)
+        {
+            _usersRepository = usersRepository;
+            _tokenService = tokenService;
+            _mapper = mapper;
+
+        }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
+        {
+            var users = await _usersRepository.GetAll();
+            var user = users.FirstOrDefault(u => u.Username == loginDto.Username && u.Password == loginDto.Password);
+            if (user == null)
+            {
+                Console.WriteLine("Unauthorize");
+                return Unauthorized();
+            }
+            var token = _tokenService.GenerateToken(user.Username);
+            return Ok(new {Token = token});
+
+        }
+    }
+}

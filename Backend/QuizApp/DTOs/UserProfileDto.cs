@@ -4,11 +4,12 @@ namespace QuizApp.DTOs
 {
     //public class UpdateUserProfile
     //{
-        
+
     //}
     public class GetUserProfile
     {
         public long Id { get; set; }
+    }
     public class DeleteUserProfile
     {
         public long Id { get; set; }

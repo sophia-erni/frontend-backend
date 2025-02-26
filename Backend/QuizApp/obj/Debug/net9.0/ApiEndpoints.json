@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "QuizApp.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "api/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDto",
+        "Type": "QuizApp.DTOs.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "QuizApp.Controllers.QuestionsController",
     "Method": "GetQuestions",
     "RelativePath": "api/questions",

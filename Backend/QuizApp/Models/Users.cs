@@ -3,7 +3,7 @@
     public class Users
     {
         public long Id { get; set; }
-        public string UserName { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
 
         public ICollection<Questions> Question {  get; set; }

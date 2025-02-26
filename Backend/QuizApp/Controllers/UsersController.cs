@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QuizApp.DTOs;
@@ -20,6 +21,7 @@ namespace QuizApp.Controllers
             _mapper = mapper;
         }
 
+        [Authorize]
         [HttpGet("users")]
         public async Task<IActionResult> GetUsers()
         {
