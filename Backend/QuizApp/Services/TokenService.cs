@@ -12,17 +12,22 @@ namespace QuizApp.Services
         {
             _secret = secret;
         }
-        public string GenerateToken(string username,string role) {
+        public string GenerateToken(string username, string role)
+        {
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_secret);
+            var securityKey = new SymmetricSecurityKey(key);
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new[] { 
-                    new Claim(ClaimTypes.Name, username), 
+                Subject = new ClaimsIdentity(new[] {
+                    new Claim(ClaimTypes.Name, username),
                     new Claim(ClaimTypes.Role, role) }),
                 Expires = DateTime.UtcNow.AddDays(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = credentials,
+                Issuer = "yourIssuer",
+                Audience = "yourAudience"
 
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);

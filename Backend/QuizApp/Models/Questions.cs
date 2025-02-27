@@ -6,13 +6,13 @@ namespace QuizApp.Models
     //primary key
     public class Questions
     {
-
+        [Key]
         public long Id { get; set; }
         public string Question {  get; set; }
         public string Answer    { get; set; }
 
-        
-        public long UsersId { get; set; }
+        [ForeignKey("Users")]
+        public long UserId { get; set; }
         public Users Users { get; set; }
 
     }

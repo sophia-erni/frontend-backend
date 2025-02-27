@@ -23,6 +23,8 @@ namespace QuizApp.Controllers
 
         //[Authorize(Policy = "User")]
         [HttpGet("users")]
+        [Authorize(Policy = "Admin")]
+
         public async Task<IActionResult> GetUsers()
         {
             var users = await _usersRepository.GetAll(a => a.Question);
@@ -31,8 +33,7 @@ namespace QuizApp.Controllers
         }
 
         [HttpGet("users/{id}")]
-        //[Authorize(Policy = "User")]
-        [Authorize]
+        //[Authorize]
         public async Task<IActionResult> GetUser(long id)
         {
             var user = await _usersRepository.Get(id);
@@ -44,7 +45,10 @@ namespace QuizApp.Controllers
             return Ok(userDto);
         }
 
+
         [HttpPost("users")]
+        //[Authorize(Policy = "Admin")]
+
         public async Task<IActionResult> CreateUser([FromBody] CreateUser createUser)
         {
             var user = _mapper.Map<Users>(createUser);
@@ -68,6 +72,8 @@ namespace QuizApp.Controllers
         }
 
         [HttpDelete("users/{id}")]
+        [Authorize(Policy = "Admin")]
+
         public async Task<IActionResult> DeleteUser(long id)
         {
             var user = await _usersRepository.Get(id);

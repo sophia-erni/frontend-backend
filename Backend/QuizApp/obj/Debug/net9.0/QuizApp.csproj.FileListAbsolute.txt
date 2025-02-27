@@ -328,5 +328,5 @@ C:\Users\extjaso\OneDrive - ERNI Group\Desktop\Bootcamp\Exercises\frontend-backe
 C:\Users\extjaso\OneDrive - ERNI Group\Desktop\Bootcamp\Exercises\frontend-backend\Backend\QuizApp\obj\Debug\net9.0\QuizApp.pdb
 C:\Users\extjaso\OneDrive - ERNI Group\Desktop\Bootcamp\Exercises\frontend-backend\Backend\QuizApp\obj\Debug\net9.0\QuizApp.genruntimeconfig.cache
 C:\Users\extjaso\OneDrive - ERNI Group\Desktop\Bootcamp\Exercises\frontend-backend\Backend\QuizApp\obj\Debug\net9.0\ref\QuizApp.dll
-C:\Users\extjaso\OneDrive - ERNI Group\Desktop\Bootcamp\Exercises\frontend-backend\Backend\QuizApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\extjaso\OneDrive - ERNI Group\Desktop\Bootcamp\Exercises\frontend-backend\Backend\QuizApp\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\extjaso\OneDrive - ERNI Group\Desktop\Bootcamp\Exercises\frontend-backend\Backend\QuizApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

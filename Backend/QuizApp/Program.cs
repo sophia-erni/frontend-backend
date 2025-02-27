@@ -1,4 +1,4 @@
-using System.IdentityModel.Tokens.Jwt;
+﻿using System.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -30,59 +30,29 @@ builder.Services.AddControllers()
     });
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 
-//generating a secure key
-byte[] key = new byte[32];
-using (var rng = RandomNumberGenerator.Create())
+var key = Encoding.ASCII.GetBytes(builder.Configuration["JWT:Key"]);
+builder.Services.AddAuthentication(x =>
 {
-    rng.GetBytes(key);
-}
-string secretKey = Convert.ToBase64String(key);
-
-//store the key in an environment variable
-Environment.SetEnvironmentVariable("JWT_SECRET_KEY", secretKey);
-
-var keyFromEnv = Environment.GetEnvironmentVariable("JWT_SECRET_KEY");
-if (string.IsNullOrEmpty(keyFromEnv))
-{
-    throw new InvalidOperationException("JWT_SECRET_KEY environment variable is not set.");
-}
-var keyBytes = Convert.FromBase64String(keyFromEnv);
-//Configure JWT Authentication
-builder.Services.AddAuthentication(option =>
-{
-    option.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    option.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
-    .AddJwtBearer(option =>
+    .AddJwtBearer(x =>
     {
-        option.TokenValidationParameters = new TokenValidationParameters
+        x.RequireHttpsMetadata = false;
+        x.SaveToken = true;
+        x.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = false,
-            ValidateAudience = false,
-            ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
-            RequireSignedTokens = false // Add this line to not require a 'kid' in the token
-        };
-
-        option.Events = new JwtBearerEvents
-        {
-            OnAuthenticationFailed = context =>
-            {
-                Console.WriteLine("Authentication failed" + context.Exception.Message);
-                return Task.CompletedTask;
-            },
-            OnTokenValidated = context =>
-            {
-                Console.WriteLine("Token validated: " + context.SecurityToken);
-                return Task.CompletedTask;
-            }
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidIssuer = builder.Configuration["JWT:Issuer"],
+            ValidAudience = builder.Configuration["JWT:Audience"]
         };
     });
-    
-  
 
-builder.Services.AddSingleton(new TokenService(secretKey));
+//builder.Services.AddSingleton(new TokenService(secretKey));
+builder.Services.AddSingleton(new TokenService(builder.Configuration["JWT:Key"]));
 builder.Services.AddAuthorization(option =>
 {
     option.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
@@ -120,31 +90,11 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-//app.UseEndpoints(endpoints =>
+//app.UseEndpoints(endpoints ＝>
 //{
 //    endpoints.MapControllers();
 //});
 
-
-
-
 app.Run();
 
-string GenerateJwtToken(string secretKey)
-{
-    var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-    var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-    var token = new JwtSecurityToken(
-        issuer: "yourIssuer",
-        audience: "yourAudience",
-        expires: DateTime.Now.AddMinutes(30),
-        signingCredentials: creds);
-
-    var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
-
-    // Log the generated token
-    Console.WriteLine("Generated JWT Token: " + tokenString);
-
-    return tokenString;
-}

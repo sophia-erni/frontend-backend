@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using QuizApp.DTOs;
 using QuizApp.Models;
 using QuizApp.Repositories;
@@ -26,15 +27,26 @@ namespace QuizApp.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
+            var token = "string";
             var users = await _usersRepository.GetAll();
-            var user = users.FirstOrDefault(u => u.Username == loginDto.Username && u.Password == loginDto.Password);
+            var user = users.FirstOrDefault(u => u.Username == loginDto.Username && u.Password == loginDto.Password && u.Role == loginDto.Role);
             if (user == null)
             {
                 Console.WriteLine("Unauthorize");
                 return Unauthorized();
             }
-            var token = _tokenService.GenerateToken(user.Username,"User");
-            return Ok(new {Token = token});
+            if (user.Role == "Admin")
+            {
+                token = _tokenService.GenerateToken(user.Username, "Admin");
+                
+
+            }
+            else
+            {
+                token = _tokenService.GenerateToken(user.Username, "User");
+            }
+            return Ok(new { Token = token });
+
 
         }
     }

@@ -22,6 +22,7 @@ namespace QuizApp.Controllers
         }
 
         [HttpGet("questions")]
+        [Authorize(Policy = "User")]
         public async Task<IActionResult> GetQuestions()
         {
             var questions = await _questionsRepository.GetAll();
@@ -30,6 +31,7 @@ namespace QuizApp.Controllers
         }
 
         [HttpGet("questions/{id}")]
+        [Authorize(Policy = "User")]
         public async Task<IActionResult> GetQuestion(long id)
         {
             var question = await _questionsRepository.Get(id);
@@ -43,8 +45,8 @@ namespace QuizApp.Controllers
 
         }
 
-        [Authorize(Policy = "Admin")]
         [HttpPost("questions")]
+        //[Authorize(Policy = "User")]
         public async Task<IActionResult> CreateQuestion([FromBody] CreateQuestion createQuestion)
         {
             var question = _mapper.Map<Questions>(createQuestion);
