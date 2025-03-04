@@ -29,7 +29,9 @@ namespace QuizApp.Controllers
         {
             var token = "string";
             var users = await _usersRepository.GetAll();
-            var user = users.FirstOrDefault(u => u.Username == loginDto.Username && u.Password == loginDto.Password && u.Role == loginDto.Role);
+            //var user = users.FirstOrDefault(u => u.Username == loginDto.Username && u.Password == loginDto.Password && u.Role == loginDto.Role);
+            var user = users.FirstOrDefault(u => u.Username == loginDto.Username && u.Password == loginDto.Password);
+
             if (user == null)
             {
                 Console.WriteLine("Unauthorize");

@@ -32,7 +32,7 @@ namespace QuizApp.Controllers
 
         [HttpGet("questions/{id}")]
         [Authorize(Policy = "User")]
-        public async Task<IActionResult> GetQuestion(long id)
+              public async Task<IActionResult> GetQuestion(long id)
         {
             var question = await _questionsRepository.Get(id);
             if (question == null)
