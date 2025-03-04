@@ -27,7 +27,9 @@ namespace QuizApp.Controllers
 
         public async Task<IActionResult> GetUsers()
         {
-            var users = await _usersRepository.GetAll(a => a.Question);
+            //var users = await _usersRepository.GetAll(a => a.Question);
+            var users = await _usersRepository.GetAll();
+
             var usersDto = _mapper.Map<List<GetUserDto>>(users);
             return Ok(usersDto);
         }

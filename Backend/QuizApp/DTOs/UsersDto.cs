@@ -7,13 +7,14 @@ namespace QuizApp.DTOs
         public string Username { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
+        public long UserProfileId { get; set; }
     }
 
     public class UpdateUser
     {
         public string Username { get; set; }
         public string Password { get; set; }
-        public string Role { get; set; }
+        //public string Role { get; set; }
 
     }
 
@@ -31,7 +32,7 @@ namespace QuizApp.DTOs
         public long Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        public ICollection<GetQuestionDto> Questions { get; set; }
+        //public ICollection<GetQuestionDto> Questions { get; set; }
 
     }
 

@@ -5,7 +5,7 @@
     {
         public string Question { get; set; }
         public string Answer { get; set; }
-        public long UserId { get; set; }
+        public long UserProfileId { get; set; }
     }
     public class UpdateQuestion
     {
@@ -28,7 +28,7 @@
         public long Id { get; set; }
         public string Question { get; set; }
         public string Answer { get; set; }
-        public long UserId { get; set; }
+        public long UserProfileId { get; set; }
 
     }
 

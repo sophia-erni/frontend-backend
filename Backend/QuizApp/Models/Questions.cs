@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuizApp.Models
 {
-    //primary key
     public class Questions
     {
         [Key]
@@ -11,9 +10,10 @@ namespace QuizApp.Models
         public string Question {  get; set; }
         public string Answer    { get; set; }
 
-        [ForeignKey("Users")]
-        public long UserId { get; set; }
-        public Users Users { get; set; }
+        [ForeignKey("UserProfiles")]
+        public long UserProfileId { get; set; }
+        public UserProfiles UserProfile { get; set; }
+
 
     }
 }
