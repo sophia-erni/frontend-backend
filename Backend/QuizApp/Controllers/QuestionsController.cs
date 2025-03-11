@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using QuizApp.Data;
 using QuizApp.DTOs;
 using QuizApp.Models;
 using QuizApp.Repositories;
@@ -12,20 +13,24 @@ namespace QuizApp.Controllers
     [ApiController]
     public class QuestionsController : ControllerBase
     {
-        private readonly IBaseRepository<Questions> _questionsRepository;
+        private readonly IQuestionRepository _questionRepository;
+
+        //private readonly IBaseRepository<Questions> _questionsRepository;
+
         private readonly IMapper _mapper;
 
-        public QuestionsController(IBaseRepository<Questions> questionsRepository, IMapper mapper)
+        public QuestionsController(IQuestionRepository questionRepository, IMapper mapper)
         {
-            _questionsRepository = questionsRepository;
+            _questionRepository = questionRepository;
+
             _mapper = mapper;
         }
 
         [HttpGet("questions")]
-        [Authorize(Policy = "User")]
+        [Authorize(Roles = "User,Admin")]
         public async Task<IActionResult> GetQuestions()
         {
-            var questions = await _questionsRepository.GetAll();
+            var questions = await _questionRepository.GetAllAsync();
             var questionsDto = _mapper.Map<List<GetQuestionDto>>(questions);
             return Ok(questionsDto);
         }
@@ -34,7 +39,7 @@ namespace QuizApp.Controllers
         [Authorize(Policy = "User")]
               public async Task<IActionResult> GetQuestion(long id)
         {
-            var question = await _questionsRepository.Get(id);
+            var question = await _questionRepository.GetByIdAsync(id);
             if (question == null)
             {
                 return NotFound();
@@ -46,39 +51,42 @@ namespace QuizApp.Controllers
         }
 
         [HttpPost("questions")]
-        //[Authorize(Policy = "User")]
+        [Authorize(Policy = "User")]
         public async Task<IActionResult> CreateQuestion([FromBody] CreateQuestion createQuestion)
         {
             var question = _mapper.Map<Questions>(createQuestion);
-            var createdQuestion = await _questionsRepository.Add(question);
-            var questionDto = _mapper.Map<GetQuestionDto>(createdQuestion);
+            _questionRepository.Add(question);
+            var questionDto = _mapper.Map<GetQuestionDto>(question);
             return CreatedAtAction(nameof(GetQuestion), new { id = questionDto.Id }, questionDto);
         }
 
         [HttpPut("questions/{id}")]
         public async Task<IActionResult> UpdateQuestion(long id, [FromBody] UpdateQuestion updateQuestion)
         {
-            var question = await _questionsRepository.Get(id);
+            var question = await _questionRepository.GetByIdAsync(id);
             if (question == null)
             {
                 return NotFound();
             }
-            _mapper.Map(updateQuestion, question);
-            var updatedQuestion = await _questionsRepository.Update(question);
-            var updatedQuestionDto = _mapper.Map<GetQuestionDto>(updatedQuestion);
+            //_mapper.Map(updateQuestion, question);
+            question.Question = updateQuestion.Question;
+            question.Answer = updateQuestion.Answer;
+
+            _questionRepository.Update(question);
+            //var updatedQuestionDto = _mapper.Map<GetQuestionDto>(question);
             return NoContent();
         }
 
         [HttpDelete("questions/{id}")]
         public async Task<IActionResult> DeleteQuestion(long id)
         {
-            var question = await _questionsRepository.Get(id);
+            var question = await _questionRepository.GetByIdAsync(id);
             if (question == null)
             {
-                return NotFound();
+                return NotFound("Question not found");
             }
-            var questionDto = await _questionsRepository.Delete(id);
-            return Ok(questionDto);
+            _questionRepository.Delete(id);
+            return Ok("Question has been deleted");
         }
     }
 }

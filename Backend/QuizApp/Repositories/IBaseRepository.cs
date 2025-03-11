@@ -10,9 +10,11 @@ namespace QuizApp.Repositories
 
         Task<T> Get(long id, params Expression<Func<T, object>>[] includes);
 
+        Task<T> GetByIdAsync(long id);
+        Task<List<T>> GetAllAsync();
 
-        Task<T> Add(T entity); //where this generates, help to create 
-        Task<T> Update(T entity);
-        Task<T> Delete(long id);
+        void Add(T entity); //where this generates, help to create 
+        void Update(T entity);
+        void Delete(long id);
     }
 }

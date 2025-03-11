@@ -7,34 +7,34 @@ namespace QuizApp.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
+        protected readonly DbSet<T> Context;
         private readonly AppDbContext _context;
 
         public BaseRepository(AppDbContext context)
         {
+            Context = context.Set<T>();
             _context = context;
         }
 
-        public async Task<T> Add(T entity)
+        public void Add(T entity)
         {
-            await _context.Set<T>().AddAsync(entity);
-            await _context.SaveChangesAsync();
-            return entity;
+            Context.Add(entity);
+            _context.SaveChanges();
         }
 
-        public async Task<T> Delete(long id)
+        public void Delete(long id)
         {
-            var entity = await _context.Set<T>().FindAsync(id);
+            var entity = Context.Find(id);
             if (entity != null)
             {
-                _context.Set<T>().Remove(entity);
-                await _context.SaveChangesAsync();
+                Context.Remove(entity);
+                _context.SaveChanges();
             }
-            return entity;
         }
 
         public async Task<T> Get(long id, params Expression<Func<T, object>>[] includes)
         {
-            IQueryable<T> query = _context.Set<T>();
+            IQueryable<T> query = Context;
             query = includes.Aggregate(query, (current, include) => current.Include(include));
             return await query.FirstOrDefaultAsync();
         }
@@ -43,16 +43,25 @@ namespace QuizApp.Repositories
 
         public Task<List<T>> GetAll(params Expression<Func<T, object>>[] includes)
         {
-            IQueryable<T> query = _context.Set<T>();
+            IQueryable<T> query = Context;
             query = includes.Aggregate(query, (current, include) => current.Include(include));
             return query.ToListAsync();
         }
 
-        public async Task<T> Update(T entity)
+        public async Task<List<T>> GetAllAsync()
         {
-            _context.Set<T>().Update(entity);
-            await _context.SaveChangesAsync();
-            return entity;
+            return await Context.ToListAsync();
+        }
+
+        public async Task<T> GetByIdAsync(long id)
+        {
+            return await Context.FindAsync(id);
+        }
+
+        public void Update(T entity)
+        {
+            Context.Update(entity);
+            _context.SaveChanges();
         }
     }
 }

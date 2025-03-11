@@ -18,10 +18,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("sqlConnection"));
 });
-
-builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
-//builder.Services.AddRouting();
+builder.Services.AddScoped<IQuestionRepository,QuestionRepository>();
 builder.Services.AddControllers()
     .AddJsonOptions(options =>
     {
@@ -29,6 +27,8 @@ builder.Services.AddControllers()
         options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
     });
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
+
+
 
 var key = Encoding.ASCII.GetBytes(builder.Configuration["JWT:Key"]);
 builder.Services.AddAuthentication(x =>
@@ -51,12 +51,12 @@ builder.Services.AddAuthentication(x =>
         };
     });
 
-//builder.Services.AddSingleton(new TokenService(secretKey));
 builder.Services.AddSingleton(new TokenService(builder.Configuration["JWT:Key"]));
 builder.Services.AddAuthorization(option =>
 {
     option.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
     option.AddPolicy("User", policy => policy.RequireRole("User"));
+
 });
 
 builder.Services.AddOpenApi();
@@ -90,10 +90,7 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
-//app.UseEndpoints(endpoints ＝>
-//{
-//    endpoints.MapControllers();
-//});
+
 
 app.Run();
 

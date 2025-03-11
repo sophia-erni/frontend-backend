@@ -24,7 +24,7 @@ namespace QuizApp.Services
                 Subject = new ClaimsIdentity(new[] {
                     new Claim(ClaimTypes.Name, username),
                     new Claim(ClaimTypes.Role, role) }),
-                Expires = DateTime.UtcNow.AddDays(1),
+                Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = credentials,
                 Issuer = "yourIssuer",
                 Audience = "yourAudience"
